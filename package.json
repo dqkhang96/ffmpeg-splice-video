@@ -1,0 +1,88 @@
+{
+  "name": "splice-video",
+  "version": "1.0.0",
+  "description": "Phần mềm xịn xò nhất quả đất",
+  "main": "./dist/main.bundle.js",
+  "scripts": {
+    "start": "electron ./dist/main.bundle.js",
+    "dev": "rimraf dist && cross-env NODE_ENV=development webpack --watch --progress --colors",
+    "prod": "rimraf dist && cross-env NODE_ENV=production webpack --progress --colors",
+    "test": "mocha -r ts-node/register -r tsconfig-paths/register \"test/**/*.ts\"",
+    "build:win": "electron-builder build --win --x64",
+    "build:mac": "electron-builder build --mac --x64"
+  },
+  "build": {
+    "appId": "com.devtography.electron_boilerplate",
+    "productName": "Electron+React+TypeScript Boilerplate",
+    "directories": {
+      "app": "./dist/",
+      "output": "./out/"
+    },
+    "mac": {
+      "target": "pkg",
+      "icon": "./dist/assets/icon.png"
+    },
+    "win": {
+      "target": "nsis",
+      "asar": false,
+      "icon": "./dist/assets/icon.png"
+    },
+    "buildVersion": "1.0.0"
+  },
+  "author": "Đinh Quang Khang",
+  "license": "MIT",
+  "dependencies": {
+    "@ffmpeg-installer/darwin-x64": "^4.0.6",
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@types/electron-json-storage": "^4.0.0",
+    "@types/fluent-ffmpeg": "^2.1.14",
+    "@types/lodash": "^4.14.161",
+    "@types/react": "^16.9.13",
+    "@types/react-dom": "^16.9.4",
+    "copy-webpack-plugin": "^6.1.0",
+    "electron-json-storage": "^4.2.0",
+    "fluent-child-process": "^1.0.1",
+    "fluent-ffmpeg": "^2.1.2",
+    "rc-progress": "^3.1.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "short-uuid": "^4.1.0",
+    "sqlite3": "^5.0.0",
+    "use-state-with-callback": "^2.0.2"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.7",
+    "@types/react-router": "^4.4.5",
+    "@types/react-router-dom": "^4.3.5",
+    "acorn": "^6.4.0",
+    "ajv": "^6.10.2",
+    "copy-pkg-json-webpack-plugin": "0.0.38",
+    "cross-env": "^5.2.1",
+    "css-loader": "^1.0.1",
+    "electron": "^3.1.13",
+    "electron-builder": "^20.44.4",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-import-resolver-webpack": "^0.11.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.17.0",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "lodash": "^4.17.20",
+    "mocha": "^5.2.0",
+    "rimraf": "^2.7.1",
+    "source-map-loader": "^0.2.4",
+    "spectron": "^5.0.0",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^5.4.5",
+    "ts-node": "^7.0.1",
+    "tsconfig-paths": "^3.9.0",
+    "tslint": "^5.20.1",
+    "tslint-microsoft-contrib": "^5.2.1",
+    "typescript": "^3.7.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
